@@ -1,0 +1,29 @@
+#******************************************************************************
+#
+# config.in - Configuration information for the led_eqaulizer project.
+#
+# Copyright (c) 2009 Texas Instruments Incorporated.  All rights reserved.
+# TI Information - Selective Disclosure
+#
+#******************************************************************************
+
+PART=LM4F120H5QR
+TARGET=led_equalizer
+DESC=Audio in used to display graphic eq on an olimex LED tile booster pack
+ROOT=../../..
+VPATH=../../../utils
+IPATH=..
+IPATH+=:../../..
+IPATH+=:../../../dsplib
+COPYRIGHT=2011
+DEFINES=TARGET_IS_BLIZZARD_RA1
+SRC=./led_equalizer.c
+SRC+= ./ti_hamming_window_vector.c
+SRC+= ./ti_sample_sine_vector2.c
+SRC+= ../../../utils/uartstdio.c
+DRIVERLIB=1
+STACK=256
+TIMER0A=Timer0AIntHandler
+TIMER1A=Timer1AIntHandler
+ADC3=ADC3IntHandler
+UDMAERR=uDMAErrorHandler
