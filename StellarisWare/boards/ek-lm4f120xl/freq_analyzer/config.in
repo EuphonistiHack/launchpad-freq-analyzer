@@ -1,0 +1,39 @@
+#******************************************************************************
+#
+# config.in - Configuration information for the led_eqaulizer project.
+#
+# Copyright (c) 2009 Texas Instruments Incorporated.  All rights reserved.
+# TI Information - Selective Disclosure
+#
+#******************************************************************************
+
+PART=LM4F120H5QR
+TARGET=freq_analyzer
+DESC=Frequency analyzer using Kentek display
+ROOT=../../..
+VPATH=../../../utils
+IPATH=..
+IPATH+=:../../..
+IPATH+=:../../../dsplib
+COPYRIGHT=2011
+DEFINES=TARGET_IS_BLIZZARD_RA1
+SRC=./freq_analyzer.c
+SRC+= ./dsp.c
+SRC+= ./gui.c
+SRC+= ./ti_hamming_window_vector.c
+SRC+= ../../../utils/uartstdio.c
+SRC+= ../../../utils/ustdlib.c
+SRC+= ./Kentec320x240x16_ssd2119_8bit.c
+SRC+= ./touch.c
+SRC+= ./images.c
+SRC+= ./logoUnc.c
+DRIVERLIB=1
+GRLIB=1
+STACK=256
+TIMER0A=Timer0AIntHandler
+TIMER1A=Timer1AIntHandler
+TIMER2A=Timer2AIntHandler
+TIMER3A=Timer3AIntHandler
+ADC3=ADC3IntHandler
+ADC1SS3=TouchScreenIntHandler
+UDMAERR=uDMAErrorHandler
